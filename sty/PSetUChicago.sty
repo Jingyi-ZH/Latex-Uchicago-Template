@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% % Include this in the .tex
+% \documentclass[11pt]{article}
+
+% \input{PSetUChicago.sty}
+
+% \newcommand{\MyTitle}{ TITLE }
+% \newcommand{\MyDate}{ DATE }
+% \newcommand{\MySubject}{ SUBJECT }
+% \newcommand{\MyProgram}{ PROGRAM }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[letterpaper, margin=2cm, top=2.35cm, bottom=1.5cm, headheight=42pt, headsep=0.5cm, heightrounded]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lastpage}
+\usepackage[affil-it]{authblk}
+\usepackage[T1]{fontenc}
+\newenvironment{algorithmfont}{\bgroup\par\fontfamily{\ttdefault}\selectfont\small}{\par\egroup}
+\usepackage[title,toc]{appendix}
+\usepackage{float}
+%\usepackage{sectsty}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{dirtytalk}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{indentfirst}
+\usepackage{mathrsfs}
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[bottom]{footmisc}
+\usepackage[shortlabels]{enumitem}
+% Set global enumerate style
+\setlist[enumerate]{label=\alph*.}
+\usepackage[colorlinks=true, linkcolor=Maroon, urlcolor=Maroon, citecolor=Maroon, linktoc=all]{hyperref}
+\usepackage{cleveref}
+\usepackage{titling}
+\usepackage{natbib}
+\usepackage{har2nat}
+\usepackage{tikz}
+\let\temp\rmdefault
+\usepackage{mathpazo}
+\usepackage{multirow}
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+% \numberwithin{equation}{section}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\renewcommand\qedsymbol{$\blacksquare$}
+\linespread{1.3}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+% \setlength\parindent{24pt}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\Large\bfseries}{\arabic{section}. }{0pt}{}{}
+\titleformat{\subsection}[hang]{\normalfont\large\bfseries}{(\alph{subsection})}{2pt}{}{}
+\titleformat{\subsubsection}[hang]{\normalfont\normalsize\bfseries}{\Roman{subsubsection}.}{2pt}{}{}
+
+
+\lhead{\includegraphics[width=3cm]{sty/UChicago.png}}
+\fancyhead[R]{\MySubject}
+\rhead{\MyLastName}
+\chead{\MySubject}
+\renewcommand{\thesubsection}{(\alph{subsection})}
+% \renewcommand{\thesubsubsection}{\Roman{subsubsection}}
+% \numberwithin{equation}{section}
+
+\newcommand{\MakeMyTitle}{
+\begin{center}
+	\huge{\textbf{\MyTitle}}\\ [0.5em]
+    \normalsize \MyNames \\
+	\normalsize \MyDate\\
+\end{center}
+}
+
+\newcommand{\neqref}[1]{\hyperref[#1]{equation~\ref*{#1}}}
+\renewcommand{\eqref}[1]{\hyperref[#1]{equation}~(\hyperref[#1]{\ref*{#1}})}
+\newcommand{\eqrefs}[1]{\hyperref[#1]{equations}~(\hyperref[#1]{\ref*{#1}})}
+\newcommand{\Eqref}[1]{\hyperref[#1]{Equation}~(\hyperref[#1]{\ref*{#1}})}
+\newcommand{\Eqrefs}[1]{\hyperref[#1]{Equations}~(\hyperref[#1]{\ref*{#1}})}
+\newcommand{\propref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
+\newcommand{\theoref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\newcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref*{#1}}}
+\newcommand{\onappref}[1]{\hyperref[#1]{Online Appendix~\ref*{#1}}}
+\newcommand{\lemref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
+\newcommand{\secref}[1]{\hyperref[#1]{section~\ref*{#1}}}
+\newcommand{\Secref}[1]{\hyperref[#1]{Section~\ref*{#1}}}
+\newcommand{\defref}[1]{\hyperref[#1]{definition~\ref*{#1}}}
+\newcommand{\Defref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newcommand{\Figref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
+\newcommand{\Figsref}[1]{\hyperref[#1]{Figures~\ref*{#1}}}
+\newcommand{\figref}[1]{\hyperref[#1]{figure~\ref*{#1}}}
+\newcommand{\figsref}[1]{\hyperref[#1]{figures~\ref*{#1}}}
+\newcommand{\tabref}[1]{\hyperref[#1]{table~\ref*{#1}}}
+\newcommand{\Tabref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
+\newcommand{\assref}[1]{\hyperref[#1]{assumption~\ref*{#1}}}
+\newcommand{\Assref}[1]{\hyperref[#1]{Assumption~\ref*{#1}}}
+
+
+% for code attachment
+\usepackage{listingsutf8}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Define Julia language
+\lstdefinelanguage{Julia}{
+    morekeywords={using, function, end, for, in, if, else, elseif, while, break, continue,
+                 return, try, catch, finally, abstract, struct, mutable, macro, quote,
+                 let, global, local, const, import, export, module, baremodule, begin},
+    sensitive=true,
+    morecomment=[l]{\#},
+    morestring=[b]",
+    morestring=[b]'
+}
+
+\lstdefinestyle{juliastyle}{
+    language=Julia,
+    inputencoding=utf8,  % Add this line
+    extendedchars=true,  % Add this line
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    columns=flexible,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    columns=flexible,
+    literate=
+        {ρ}{{$\rho$}}1
+        {γ}{{$\gamma$}}1
+        {ω}{{$\omega$}}1
+        {ε}{{$\varepsilon$}}1
+        {β}{{$\beta$}}1
+        {σ}{{$\sigma$}}1
+        {Γ}{{$\Gamma$}}1
+        {α}{{$\alpha$}}1
+        {δ}{{$\delta$}}1
+        {θ}{{$\theta$}}1
+        {λ}{{$\lambda$}}1
+        {μ}{{$\mu$}}1
+        {π}{{$\pi$}}1
+        {τ}{{$\tau$}}1
+        {φ}{{$\phi$}}1
+        {χ}{{$\chi$}}1
+        {ψ}{{$\psi$}}1
+        {²}{{$^2$}}1
+}
+
+
+% Set this as the default style (optional)
+\lstset{style=juliastyle}
+
+% to use in tex, follow: \lstinputlisting[style=juliastyle]{main_Q2.jl}
+
+
+% MATLAB style definition
+\lstdefinestyle{matlab}{
+    language=Matlab,
+    backgroundcolor=\color{backcolour},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{purple},
+    numbers=left,
+    frame=single,
+    breaklines=true
+}
